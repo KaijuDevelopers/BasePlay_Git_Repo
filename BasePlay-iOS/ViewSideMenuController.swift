@@ -8,12 +8,11 @@
 
 import UIKit
 
-
-
 class ViewSideMenuController: UITableViewController {
 
     @IBOutlet var FBDisplayPic: UIImageView!
     @IBOutlet var FBDisplayName: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class ViewSideMenuController: UITableViewController {
 
         
         
-//        
+        
         FBDisplayName.text = FBGlobalVar.FBFirst_name + " " + FBGlobalVar.FBLast_name
         FBDisplayPic.imageFromUrl(urlString: FBGlobalVar.FBPic_url)
  
@@ -59,62 +58,55 @@ class ViewSideMenuController: UITableViewController {
         
        // imgAvatar.image = yourImage.circleMask
         
-       // FBDisplayPic.image = FBDisplayPic.image?.circleMask
+        FBDisplayPic.image = FBDisplayPic.image?.circleMask
         
 
         
     }
-//    
-//    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
-//        
-//        let contextImage: UIImage = UIImage(cgImage: image.cgImage!)
-//        
-//        let contextSize: CGSize = contextImage.size
-//        
-//        var posX: CGFloat = 0.0
-//        var posY: CGFloat = 0.0
-//        var cgwidth: CGFloat = CGFloat(width)
-//        var cgheight: CGFloat = CGFloat(height)
-//        
-//        // See what size is longer and create the center off of that
-//        if contextSize.width > contextSize.height {
-//            posX = ((contextSize.width - contextSize.height) / 2)
-//            posY = 0
-//            cgwidth = contextSize.height
-//            cgheight = contextSize.height
-//        } else {
-//            posX = 0
-//            posY = ((contextSize.height - contextSize.width) / 2)
-//            cgwidth = contextSize.width
-//            cgheight = contextSize.width
-//        }
-//        
-//        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
-//        
-//        
-//        // Create bitmap image from context using the rect
-//        let imageRef: CGImage = contextImage.cgImage!.cropping(to: rect)!
-//        
-//        // Create a new image based on the imageRef and rotate back to the original orientation
-//        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
-//        
-//        return image
-//    }
-//    
+    
+    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
+        
+        let contextImage: UIImage = UIImage(cgImage: image.cgImage!)
+        
+        let contextSize: CGSize = contextImage.size
+        
+        var posX: CGFloat = 0.0
+        var posY: CGFloat = 0.0
+        var cgwidth: CGFloat = CGFloat(width)
+        var cgheight: CGFloat = CGFloat(height)
+        
+        // See what size is longer and create the center off of that
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            cgwidth = contextSize.height
+            cgheight = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            cgwidth = contextSize.width
+            cgheight = contextSize.width
+        }
+        
+        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
+        
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImage = contextImage.cgImage!.cropping(to: rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+        
+        return image
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool)
-    {
-        
-       // FBDisplayPic.imageFromUrl(urlString: FBGlobalVar.FBPic_url)
-
-        
-       // FBDisplayPic.image = FBDisplayPic.image?.circleMask
-
+    override func viewWillAppear(_ animated: Bool) {
  
     }
 
@@ -124,24 +116,11 @@ class ViewSideMenuController: UITableViewController {
 //        // #warning Incomplete implementation, return the number of sections
 //        return 0
 //    }
-
+//
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
 //        return 0
 //    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        print(indexPath)
-        if(indexPath.row == 5)
-        {
-            let loginManager = FBSDKLoginManager()
-            loginManager.logOut()
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-            let vc: ViewController = storyboard.instantiateViewController(withIdentifier: "ViewControllerID") as! ViewController
-            self.present(vc, animated: false, completion: nil)
-        }
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -199,8 +178,9 @@ class ViewSideMenuController: UITableViewController {
     */
 
 }
-
 //Get Facebook Profile Pic Async :Start
+
+
 extension UIImageView {
     public func imageFromUrl(urlString: String) {
         if let url = NSURL(string: urlString) {
@@ -210,15 +190,17 @@ extension UIImageView {
                 (response: URLResponse?, data: Data?, error: NSError?) -> Void in
                 if let imageData = data as NSData? {
                     self.image = UIImage(data: imageData as Data)
-                    self.image = self.image?.circleMask
+                    
+
                 }
             }
         }
     }
 }
+
+
 //Get Facebook Profile Pic Async :End
 
-//CircleMake of ProfilePic :Start
 extension UIImage {
     var circleMask: UIImage {
         let square = CGSize(width: min(size.width, size.height), height: min(size.width, size.height))
@@ -236,6 +218,5 @@ extension UIImage {
         return result!
     }
 }
-//CircleMake of ProfilePic :End
 
 

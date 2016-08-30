@@ -27,12 +27,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SWRevealViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 
 #pragma mark - StatusBar Helper Function
-
-
 
 // computes the required offset adjustment due to the status bar for the passed in view,
 // it will return the statusBar height if view fully overlaps the statusBar, otherwise returns 0.0f

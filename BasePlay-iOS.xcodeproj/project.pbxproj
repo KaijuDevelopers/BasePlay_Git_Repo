@@ -11,13 +11,15 @@
 		13046A5D1D6C33F200EFB295 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13046A5C1D6C33F200EFB295 /* EventViewController.swift */; };
 		1321A8971D6B0E3B00AFE81B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321A8961D6B0E3B00AFE81B /* AppDelegate.swift */; };
 		1321A8991D6B0E3B00AFE81B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321A8981D6B0E3B00AFE81B /* ViewController.swift */; };
-		1321A89C1D6B0E3B00AFE81B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1321A89A1D6B0E3B00AFE81B /* Main.storyboard */; };
 		1321A89E1D6B0E3B00AFE81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1321A89D1D6B0E3B00AFE81B /* Assets.xcassets */; };
 		1321A8A11D6B0E3B00AFE81B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1321A89F1D6B0E3B00AFE81B /* LaunchScreen.storyboard */; };
 		1321A8AC1D6B0E3B00AFE81B /* BasePlay_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321A8AB1D6B0E3B00AFE81B /* BasePlay_iOSTests.swift */; };
 		1321A8B71D6B0E3B00AFE81B /* BasePlay_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321A8B61D6B0E3B00AFE81B /* BasePlay_iOSUITests.swift */; };
+		132278821D74196D002B2385 /* RateUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132278811D74196D002B2385 /* RateUSViewController.swift */; };
+		132278891D742951002B2385 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 132278881D742951002B2385 /* RadioButton.m */; };
 		1341270A1D6C53DF00791130 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134127091D6C53DF00791130 /* ProfileTableViewController.swift */; };
 		13E1BFCD1D6BFF3300963ED7 /* ourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1BFCC1D6BFF3300963ED7 /* ourViewController.swift */; };
+		13FBAF651D756544001AE16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FBAF631D756544001AE16F /* Main.storyboard */; };
 		CC07BC1E1D6C59CE00B4F4AC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC07BC1D1D6C59CE00B4F4AC /* SWRevealViewController.m */; };
 		CC07BC201D6C63FC00B4F4AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC07BC1F1D6C63FC00B4F4AC /* FBSDKCoreKit.framework */; };
 		CC07BC221D6C640600B4F4AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC07BC211D6C640600B4F4AC /* FBSDKLoginKit.framework */; };
@@ -50,7 +52,6 @@
 		1321A8931D6B0E3B00AFE81B /* BasePlay-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BasePlay-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1321A8961D6B0E3B00AFE81B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1321A8981D6B0E3B00AFE81B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1321A89B1D6B0E3B00AFE81B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1321A89D1D6B0E3B00AFE81B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1321A8A01D6B0E3B00AFE81B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1321A8A21D6B0E3B00AFE81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,9 +61,13 @@
 		1321A8B21D6B0E3B00AFE81B /* BasePlay-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BasePlay-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1321A8B61D6B0E3B00AFE81B /* BasePlay_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePlay_iOSUITests.swift; sourceTree = "<group>"; };
 		1321A8B81D6B0E3B00AFE81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		132278811D74196D002B2385 /* RateUSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateUSViewController.swift; sourceTree = "<group>"; };
+		132278871D742951002B2385 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioButton.h; path = "../../RadioButton-ios-sample/RadioButton.h"; sourceTree = "<group>"; };
+		132278881D742951002B2385 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioButton.m; path = "../../RadioButton-ios-sample/RadioButton.m"; sourceTree = "<group>"; };
 		134127091D6C53DF00791130 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = ../ProfileTableViewController.swift; sourceTree = "<group>"; };
 		13E1BFC71D6BE4B300963ED7 /* BasePlay-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasePlay-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		13E1BFCC1D6BFF3300963ED7 /* ourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ourViewController.swift; sourceTree = "<group>"; };
+		13FBAF641D756544001AE16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC07BC1C1D6C59CE00B4F4AC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CC07BC1D1D6C59CE00B4F4AC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CC07BC1F1D6C63FC00B4F4AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -129,11 +134,13 @@
 		1321A8951D6B0E3B00AFE81B /* BasePlay-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1322788A1D742956002B2385 /* RadioButton */,
 				1321A8961D6B0E3B00AFE81B /* AppDelegate.swift */,
 				134127091D6C53DF00791130 /* ProfileTableViewController.swift */,
 				1321A8981D6B0E3B00AFE81B /* ViewController.swift */,
 				CC27BEE11D719EDC00BFDCA5 /* ViewSideMenuController.swift */,
-				1321A89A1D6B0E3B00AFE81B /* Main.storyboard */,
+				13FBAF631D756544001AE16F /* Main.storyboard */,
+				132278811D74196D002B2385 /* RateUSViewController.swift */,
 				13046A5C1D6C33F200EFB295 /* EventViewController.swift */,
 				13046A581D6C232600EFB295 /* SportsViewController.swift */,
 				13E1BFCC1D6BFF3300963ED7 /* ourViewController.swift */,
@@ -162,6 +169,15 @@
 				1321A8B81D6B0E3B00AFE81B /* Info.plist */,
 			);
 			path = "BasePlay-iOSUITests";
+			sourceTree = "<group>";
+		};
+		1322788A1D742956002B2385 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				132278871D742951002B2385 /* RadioButton.h */,
+				132278881D742951002B2385 /* RadioButton.m */,
+			);
+			name = RadioButton;
 			sourceTree = "<group>";
 		};
 		13E1BFCB1D6BE4C300963ED7 /* SWRevealViewController */ = {
@@ -286,7 +302,7 @@
 			files = (
 				1321A8A11D6B0E3B00AFE81B /* LaunchScreen.storyboard in Resources */,
 				1321A89E1D6B0E3B00AFE81B /* Assets.xcassets in Resources */,
-				1321A89C1D6B0E3B00AFE81B /* Main.storyboard in Resources */,
+				13FBAF651D756544001AE16F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,10 +329,12 @@
 			files = (
 				CC27BEDE1D71744300BFDCA5 /* Global.swift in Sources */,
 				1341270A1D6C53DF00791130 /* ProfileTableViewController.swift in Sources */,
+				132278891D742951002B2385 /* RadioButton.m in Sources */,
 				1321A8991D6B0E3B00AFE81B /* ViewController.swift in Sources */,
 				1321A8971D6B0E3B00AFE81B /* AppDelegate.swift in Sources */,
 				CC27BEE21D719EDC00BFDCA5 /* ViewSideMenuController.swift in Sources */,
 				CC07BC1E1D6C59CE00B4F4AC /* SWRevealViewController.m in Sources */,
+				132278821D74196D002B2385 /* RateUSViewController.swift in Sources */,
 				13046A5D1D6C33F200EFB295 /* EventViewController.swift in Sources */,
 				13046A591D6C232600EFB295 /* SportsViewController.swift in Sources */,
 				13E1BFCD1D6BFF3300963ED7 /* ourViewController.swift in Sources */,
@@ -355,20 +373,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1321A89A1D6B0E3B00AFE81B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1321A89B1D6B0E3B00AFE81B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1321A89F1D6B0E3B00AFE81B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1321A8A01D6B0E3B00AFE81B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		13FBAF631D756544001AE16F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13FBAF641D756544001AE16F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
