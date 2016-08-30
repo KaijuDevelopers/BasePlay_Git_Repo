@@ -56,7 +56,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate
         }
         else
         {
-            view.addSubview(loginButton)
+            fetchProfile()
+
         }
         //Facebook Add Button to View : End
         
