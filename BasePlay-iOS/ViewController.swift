@@ -8,6 +8,8 @@
 //
 import Foundation
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class FBMain{
     
@@ -22,6 +24,8 @@ class FBMain{
         self.FBEmail = FBEmail
         self.FBPic_url = FBPic_url
     }
+    
+
 }
 var FBGlobalVar = FBMain(FBFirst_name:"",FBLast_name:"",FBEmail:"",FBPic_url:"")
 
@@ -41,30 +45,29 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate
         super.viewDidLoad()
 
         //Facebook Add Button to View : Start
+        view.addSubview(loginButton)
         loginButton.center = view.center
         loginButton.delegate = self
         
-        if(FBSDKAccessToken.current() != nil)
+        
+        if (FBSDKAccessToken.current()) == nil
         {
-            
+            print("Not Logged in yet")
         }
         else
         {
             view.addSubview(loginButton)
         }
+        //Facebook Add Button to View : End
         
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        fetchProfile()
+
     }
     
 
+    
+    
     //Facebook Custom fetchProfile() Declare : Start
-    func fetchProfile(){
+    func fetchProfile() {
         
         let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, user, requestError) -> Void in
@@ -75,18 +78,36 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate
                 print(requestError)
                 return
             }
-            else
-            {
-                self.translateuserToMainViewController()
-            }
+            
             let email = user?["email"] as? String
             let firstName = user?["first_name"] as? String
             let lastName = user?["last_name"] as? String
             let picture = user?["picture"] as? NSDictionary, data = picture?["data"] as? NSDictionary, url = data?["url"] as? String
             FBGlobalVar = FBMain(FBFirst_name:firstName!,FBLast_name:lastName!,FBEmail:email!,FBPic_url:url!)
-        
+            
+//            self.nameLabel.text = "\(firstName!) \(lastName!)"
+//
+//            var pictureUrl = ""
+//
+//            if let picture = user["picture"] as? NSDictionary, data = picture["data"] as? NSDictionary, url = data["url"] as? String {
+//                pictureUrl = url
+//            }
+            
+            
+//            
+//            if let email = user?["email"] as? String
+//            {
+//                print(email)
+//                print(user)
+//                //MainEmail = Main(name:firstName!,fbemail: email)
+//                
+//                
+//            }
+            
+
+            
         })
-  
+        
     }
     //Facebook Custom fetchProfile() Declare : End
 
@@ -96,9 +117,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    //Facebook Login Button : Start
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: NSError!)
-    {
+    //Facebook Predefine Delegates : Start
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+
         if((error) != nil)
         {
             //Handle Error
@@ -109,32 +130,24 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate
         }
         else
         {
+            self.loginButton.isHidden = true
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+            let vc: SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewControllerID") as! SWRevealViewController
+            self.present(vc, animated: false, completion: nil)
+            //self.performSegue(withIdentifier: "SWRevealViewControllerSeg", sender: self)
+            
+            
             fetchProfile()
-            facebookbuttonstate(state: true)
-            translateuserToMainViewController()
-        }
-    }
-    //Facebook Login Button : Start
 
-    //Facebook Logout Button : Start
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!)
-    {
+            print("PutButtonCodeHHere1")
+        }
         
     }
-    //Facebook Logout Button : End
-  
-    func translateuserToMainViewController()
-    {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        let vc: SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewControllerID") as! SWRevealViewController
-        self.present(vc, animated: false, completion: nil)
-    }
     
-    func facebookbuttonstate(state:Bool)
-    {
-        loginButton.isHidden = state
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
     }
-
+    //Facebook Predefine Delegates : End
 
 }
 
